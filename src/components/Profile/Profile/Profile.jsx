@@ -1,7 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StatList from '../StatsList/StatsList';
-import styles from './Profile.module.css';
+import {
+  ProfileBlock,
+  Description,
+  Thumb,
+  Avatar,
+  Name,
+  Paragraph,
+} from './Profile.styled';
 
 const Profile = ({
   username,
@@ -11,17 +18,17 @@ const Profile = ({
   stats,
 }) => {
   return (
-    <div className={styles.profile}>
-      <div className={styles.description}>
-        <div className={styles.thumb}>
-          <img src={avatar} alt={username} className={styles.avatar} />
-        </div>
-        <p className={styles.name}>{username}</p>
-        <p className={styles.tag}>{`@${tag}`}</p>
-        <p className={styles.location}>{location}</p>
-      </div>
+    <ProfileBlock>
+      <Description>
+        <Thumb>
+          <Avatar src={avatar} alt={username} />
+        </Thumb>
+        <Name>{username}</Name>
+        <Paragraph>{`@${tag}`}</Paragraph>
+        <Paragraph weight>{location}</Paragraph>
+      </Description>
       <StatList userStats={stats} />
-    </div>
+    </ProfileBlock>
   );
 };
 

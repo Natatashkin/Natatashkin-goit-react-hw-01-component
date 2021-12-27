@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../ListItem.jsx/ListItem';
-import styles from './StatList.module.css';
+import { Stats, Item } from './StatList.styled';
 
 const StatList = ({ userStats }) => {
   const keys = Object.keys(userStats);
   return (
-    <ul className={styles.stats}>
+    <Stats>
       {keys.map(key => (
-        <li key={key} className={styles.item}>
+        <Item key={key}>
           <ListItem itemLabel={key} itemValue={userStats[key]} />
-        </li>
+        </Item>
       ))}
-    </ul>
+    </Stats>
   );
 };
 

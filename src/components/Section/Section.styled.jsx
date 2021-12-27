@@ -1,4 +1,6 @@
-.section {
+import styled from '@emotion/styled';
+
+const SectionBlock = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,8 +9,10 @@
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
-}
+`;
 
-.title {
+const Title = styled.h2`
   color: blueviolet;
-}
+`;
+
+export { SectionBlock, Title };

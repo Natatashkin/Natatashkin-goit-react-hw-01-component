@@ -1,4 +1,6 @@
-.stats {
+import styled from '@emotion/styled';
+
+const Stats = styled.ul`
   display: flex;
   margin: 15px 0;
   margin: 0;
@@ -8,9 +10,9 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   list-style: none;
-}
+`;
 
-.item {
+const Item = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,8 +21,10 @@
 
   color: grey;
   text-transform: capitalize;
-}
 
-.item:not(:last-child) {
-  border-right: 1px solid rgb(187, 187, 187);
-}
+  :not(:last-child) {
+    border-right: 1px solid rgb(187, 187, 187);
+  }
+`;
+
+export { Stats, Item };

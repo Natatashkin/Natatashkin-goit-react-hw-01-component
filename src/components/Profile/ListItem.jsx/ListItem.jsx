@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './ListItem.module.css';
+import { Label, Quantity } from './ListItem.styled';
 
 const ListItem = ({ itemLabel, itemValue }) => {
   return (
     <>
-      <span className={styles.label}>{itemLabel}</span>
-      <span className={styles.quantity}>{itemValue}</span>
+      <Label>{itemLabel}</Label>
+      <Quantity>{itemValue}</Quantity>
     </>
   );
 };

@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Statistics.module.css';
+import { StatisticsBlock, Title } from './Statistics.styled';
 import StatisticsList from '../StatisticsList/StatisticsList';
 
 const Statistics = ({ title, stats }) => {
   return (
-    <div className={styles.statistics}>
-      {title ? <h3 className={styles.title}>Upload stats</h3> : null}
+    <StatisticsBlock>
+      {title ? <Title>Upload stats</Title> : null}
       <StatisticsList statsData={stats} />
-    </div>
+    </StatisticsBlock>
   );
 };
 

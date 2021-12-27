@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './StatisticsList.module.css';
+import { StatList, Item, Label, Percentage } from './StatisticsList.styled';
 
 const StatisticsList = ({ statsData }) => (
-  <ul className={styles.statList}>
+  <StatList>
     {statsData.map(({ id, label, percentage }) => {
       return (
-        <li
-          className={styles.item}
-          key={id}
-          style={{ backgroundColor: getRundomColor() }}
-        >
-          <span className={styles.label}>{label}</span>
-          <span className={styles.percentage}>{percentage} %</span>
-        </li>
+        <Item key={id} style={{ backgroundColor: getRundomColor() }}>
+          <Label>{label}</Label>
+          <Percentage>{percentage} %</Percentage>
+        </Item>
       );
     })}
-  </ul>
+  </StatList>
 );
 
 StatisticsList.propTypes = {
@@ -36,7 +32,7 @@ function getRndInteger(min, max) {
 }
 
 function getRundomColor() {
-  const color = `rgb(${getRndInteger(0, 255)}, ${getRndInteger(
+  const color = `rgb(${getRndInteger(0, 230)}, ${getRndInteger(
     0,
     255,
   )}, ${getRndInteger(0, 255)})`;
